@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Aniket Vats",
+        "age": 24,
+        "city": "Delhi",
+        "role": "Software Engineer"
+    },
+    {
+        "id": 2,
+        "name": "Rahul Sharma",
+        "age": 27,
+        "city": "Mumbai",
+        "role": "Data Analyst"
+    },
+    {
+        "id": 3,
+        "name": "Priya Singh",
+        "age": 26,
+        "city": "Pune",
+        "role": "Project Manager"
+    },
+    {
+        "id": 4,
+        "name": "Amit Kumar",
+        "age": 29,
+        "city": "Bengaluru",
+        "role": "DevOps Engineer"
+    },
+    {
+        "id": 5,
+        "name": "Sneha Gupta",
+        "age": 25,
+        "city": "Hyderabad",
+        "role": "QA Engineer"
+    }
+]

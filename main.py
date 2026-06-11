@@ -2,10 +2,12 @@ from flask import Flask,jsonify
 import json
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
 
-
+load_dotenv()
 app=Flask(__name__)
-MONGO_URI = "mongodb+srv://root:root@cluster0.k7mbeev.mongodb.net/?appName=Cluster0"
+MONGO_URI = os.getenv("MONGO_URI")
 
 client = MongoClient(MONGO_URI)
 db = client["student_db"]

@@ -25,7 +25,7 @@ def get_data():
         return jsonify({"error":str(e)}),500
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("todo.html")
 
 
 @app.route("/submit", methods=["POST"])
@@ -51,8 +51,34 @@ def submit():
 @app.route("/success")
 def success():
     return render_template("success.html")
-    
 
+@app.route("/submittodoitem",methods=['POST'])
+def submittoditem():
+
+    try:
+        print("we are inside in try")
+        item_name=request.form['itemName']
+        item_desc=request.form['itemDesc']
+        print("2nd breakpoint")
+        todo={
+        "itemName":item_name,
+        "itemDesc":item_desc
+        }
+        print("3rd breakpoint")
+        collection.insert_one(todo)
+        print("4th breakpoint")
+
+        return render_template(
+        "todo.html",
+        message="To-Do Item Submitted Successfully!"
+        )
+    
+    except Exception as e:
+    
+        return render_template(
+            "todo.html",
+            error=str(e)
+        )
 if __name__=="__main__":
     app.run(debug=True)
 
